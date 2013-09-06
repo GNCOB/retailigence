@@ -7,9 +7,7 @@ module Retailigence
     end
 
     def self.perform_graph_request(endpoint, params={}, method="get")
-    resp = HTTParty.get("http://apitest.retailigence.com/v2.0/#{endpoint}", :query => params)
-    puts resp
-
+    HTTParty.get("http://apitest.retailigence.com/v2.0/#{endpoint}", :query => params)
     end
 
   end
