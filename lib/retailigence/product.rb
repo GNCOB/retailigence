@@ -2,8 +2,8 @@ module Retailigence
 
   class Product < Retailigence::Base
 
-    def self.search(params={})
-      perform_graph_request('products', params)
+    def search(params={})
+      self.class.get '/products', query: params
     end
 
   end

@@ -1,13 +1,11 @@
 require 'httparty'
 module Retailigence
   class Base
+    include HTTParty
+    base_uri 'http://apitest.retailigence.com/v2.0'
 
     def self.apikey=(key)
       @@apikey = key
-    end
-
-    def self.perform_graph_request(endpoint, params={}, method="get")
-    HTTParty.get("http://apitest.retailigence.com/v2.0/#{endpoint}", :query => params)
     end
 
   end
