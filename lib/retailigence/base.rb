@@ -2,10 +2,18 @@ require 'httparty'
 module Retailigence
   class Base
     include HTTParty
-    base_uri 'http://apitest.retailigence.com/v2.0'
+    @api_key = nil
 
-    def self.apikey=(key)
-      @@apikey = key
+    def self.api_key=(key)
+      @api_key = key
+    end
+
+    def self.api_key
+      @api_key
+    end
+
+    def self.base_uri=(uri)
+      base_uri uri
     end
 
   end
